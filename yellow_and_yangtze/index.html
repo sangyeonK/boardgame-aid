@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>황하와 장강 가이드</title>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/Semantic-Org/Semantic-UI-CSS@2.4.1/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.0/dist/jquery.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Semantic-Org/Semantic-UI-CSS@2.4.1/semantic.min.js"></script>
+</head>
+
+<body>
+  <table class="ui table">
+    <tr>
+
+      <td>
+        <h3 class="ui header">내 턴이 시작되면, 아래 액션들 중 2개 수행 ( 순서는 원하는 대로. 이미 플레이 한 액션 또 하는 것 가능 )</h3>
+        <div class="ui styled accordion">
+          <div class="active title">
+            <i class="dropdown icon"></i>
+            <span class="ui yellow label">A</span> 리더 위치 변경 ( 배치,이동,회수 )
+          </div>
+          <div class="active content">
+            <ul>
+              <li>리더는 <span class="ui black label">검은색 관료 타일</span> 옆의 빈칸에만 놓을 수 있다.</li>
+              <li>리더는 2개 이상의 국가 와 연결되는 칸에 놓을 수 없다. ( 분쟁 발생 불가 )</li>
+              <li>강 위에 놓을 수 없다</li>
+            </ul>
+          </div>
+          <div class="active title">
+            <i class="dropdown icon"></i>
+            <span class="ui yellow label">B</span> 타일 놓기
+          </div>
+          <div class="active content">
+            <ul>
+              <li>타일은 빈칸에만 놓을 수 있다</li>
+              <li><a class="ui blue label">파란색 농부 파일</a>은 강 위에만 놓을 수 있다</li>
+              <li>( 농부가 아닌 ) 다른 타일은 강 위에 놓을 수 없다</li>
+              <li><span class="ui blue label">파란색 농부 타일</span>은 액션 한번에 여러개를 놓을 수 있다</li>
+              <ul>
+                <li>2번째 이후로 놓는 타일은 이전에 놓은 타일에 붙여서 놓아야 한다</li>
+                <li>분쟁이나 파고다 배치를 발생시킨 이후에는 더 이상 추가로 놓을 수 없다</li>
+              </ul>
+              <li><span class="ui green label">녹색 상인 타일</span> 을 놓으면, 공개된 상품타일 중 하나를 가져올 수 있다</li>
+              <li>타일을 놓았을 때, 타일을 놓은 국가에 놓은 타일과 같은 색 리더 가 놓여져 있으면 해당 리더의 플레이어 에게 해당색깔 <span
+                  class="ui purple basic label">큐브
+                  1개</span> 를 부여한다</li>
+              <ul>
+                <li>같은 색 리더가 없고 검은색 리더가 놓여져 있다면, 검은색 리더의 플레이어 에게 타일색깔 <span class="ui purple basic label">큐브 1개</span> 를
+                  부여한다
+                </li>
+                <li>분쟁을 발생시키는 경우엔 점수를 얻지 못한다</li>
+              </ul>
+              <li>같은색 타일이 삼각형 모양으로 놓이게 되면 해당 색의 파고다 를 그 위에 놓을 수 있다 ( 타일놓기 액션의 일부 )</li>
+              <ul>
+                <li>분쟁을 발생시키는 경우엔 파고다를 놓지 못한다</li>
+                <li>파고다 아래에 있는 타일은 다른 파고다 를 놓을 요소로 사용될 수 없다</li>
+                <li>해당 색깔의 파고다 가 더이상 남아있지 않다면, 다른곳에 놓인 해당 색깔의 파고다를 가져와서 배치할 수 있다</li>
+              </ul>
+            </ul>
+          </div>
+          <div class="active title">
+            <i class="dropdown icon"></i>
+            <span class="ui yellow label">C</span> 파란색 농부 타일 2개 버려서 봉기 일으키기
+          </div>
+          <div class="active content">
+            <ul>
+              <li>게임보드에 있는 타일을 하나 제거해서 게임박스에 되돌려놓는다</li>
+              <li>파란색 농부 리더 를 아직 게임보드에 플레이 하지 않았다면, 1개의 <span class="ui blue label">파란색
+                  농부 타일</span>만 버려도 된다</li>
+              <ul>
+                <li>만일 리더 옆에 있는 <span class="ui black label">검은색 관료 타일</span> 이 모두 제거된다면, 해당 리더를 게임보드에서 제거한 후 플레이어 에게
+                  되돌린다
+                </li>
+                <li>만일 파고다 아래에 있는 타일이 제거된다면, 파고다 역시 게임보드에서 제거된다 ( 게임보드 옆에 위치시킨다 )</li>
+              </ul>
+            </ul>
+          </div>
+          <div class="active title">
+            <i class="dropdown icon"></i>
+            <span class="ui yellow label">D</span> 검은색 관료 타일 을 버리고 파고다 설립
+          </div>
+          <div class="active content">
+            <ul>
+              <li>녹색 상인 리더를 아직 게임보드에 플레이 하지 않았다면, 1개의 <span class="ui green label">녹색 상인 타일</span> 만 버려도 된다</li>
+              <li>비어있는 삼각형 형태로 배치된 같은 색깔의 타일 위에 파고다를 놓는다 - 파고다 놓는 규칙은 액션<span class="ui yellow label">B</span> 를 참고</li>
+            </ul>
+          </div>
+          <div class="active title">
+            <i class="dropdown icon"></i>
+            <span class="ui yellow label">E</span> 스크린 뒤에 있는 타일을 6개까지 교체
+          </div>
+          <div class="active content">
+            <ul>
+              <li>가지고 있는 타일을 6개 까지 버린 후, 버린 개수만큼 주머니에서 타일을 뽑는다</li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="ui header">내 턴 종료시</h3>
+        <ol>
+          <li>내 리더들이 있는 국가에 내 리더와 같은 색의 파고다 가 있다면, 해당 리더 색으로 <span class="ui purple basic label">큐브 1개</span>씩 획득</li>
+          <li>상품타일 6개까지 보충</li>
+          <li>모든 플레이어 는 보유한 타일을 6개까지 보충</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="hi header">분쟁 - 발생하면 즉시 해결 ( 액션이 완료되기 전에.. )</h3>
+        <div class="ui styled accordion">
+          <div class="active title">
+            <i class="dropdown icon"></i>
+            반란 - 액션<span class="ui yellow label">A</span> 결과로, 한 국가 내에 같은색의 리더가 존재할 시
+          </div>
+          <div class="active content">
+            <ol>
+              <li>새로운 리더는 공격자, 이미 있는 리더는 방어자</li>
+              <li>공격자는 원하는 만큼 검은색 관료 타일 을 추가로 투입할 수 있다</li>
+              <li>공격자의 힘은 추가투입된 검은색 관료 타일 수 와 공격하는 리더 옆에 있는 검은색 관료 타일 수 의 합 과 같다 ( 만약 공격자가 검은색 리더를 플레이하지 않았다면, 공격자의 힘을
+                +1
+                할 수 있다 )</li>
+              <li>이후, 방어자는 원하는 만큼 검은색 관료 타일을 추가로 투입할 수 있다</li>
+              <li>방어자의 힘은 추가투입된 검은색 관료 타일 수 와 방어하는 리더 옆에 있는 검은색 관료 타일 수 의 합 과 같다 ( 만약 방어자가 검은색 리더를 플레이하지 않았다면, 방어자의 힘을
+                +1
+                할 수 있다 )</li>
+              <li>힘이 높은 쪽이 승리한다 ( 같다면 방어자 승리)</li>
+              <li>패배한 리더는 회수된다; 승리자는 리더의 색깔에 해당하는 <span class="ui purple basic label">큐브 1개</span> 을 얻는다</li>
+              <li>추가투입된 검은색 관료 타일은 모두 게임박스에 되돌려 넣는다</li>
+            </ol>
+          </div>
+          <div class="active title">
+            <i class="dropdown icon"></i>
+            전쟁 - 액션<span class="ui yellow label">B</span> 결과로, 합쳐지게 되는 국가 에 같은색의 리더가 존재할 시
+          </div>
+          <div class="active content">
+            <ol>
+              <li>빨간색 통합마커 를 국가가 합쳐지는 위치에 배치</li>
+              <li>전쟁중인 국가의 힘은 해당 국가가 보유한 <span class="ui red label">빨간색 병사 타일</span> 수와 동일</li>
+              <li>국가가 합쳐지는 위치에 타일을 놓은 플레이어의 왼쪽부터 ( 시계 방향으로 ), 각 플레이어는 원하는 만큼 <span class="ui red label">빨간색 병사
+                  타일</span>을 추가로 투입할 수 있다.
+                추가투입한 병사타일은 해당 플레이어가 원하는 국가의 힘으로 더할 수 있다. ( 만약 해당플레이어가 빨간색 리더를 플레이하지 않았다면, 추가로 힘을 +1 할 수 있다 )</li>
+              <li>국가의 힘이 가장 높은 국가가 전쟁에서 승리한다 ( 같다면, 국가가 합쳐지는 위치에 타일을 놓은 플레이어가 승리국가를 정한다 )</li>
+              <li>패배한 국가에 있는 모든 <span class="ui red label">빨간색 병사 타일</span> 과 분쟁이 발생했던 리더 를 게임보드에서 제거한다</li>
+              <li>승리한 국가에 있는 각 리더의 플레이어는, 제거된 같은 색 리더 하나당 해당 색깔 <span class="ui purple basic label">큐브 1개</span> 를 얻는다 (
+                승리한 국가에 분쟁이 발생했던 리더가 없는 경우엔 점수를 얻지 못한다 )
+              </li>
+              <li>패배한 국가들 중 최종 힘이 가장 높았던 국가를 결정한다; 승리한 국가는 이 수치만큼 <span class="ui red label">빨간색 병사 타일</span> 을 게임에서
+                제거해야 한다
+                <ul>
+                  <li>먼저, 추가로 투입된 <span class="ui red label">빨간색 병사 타일</span> 부터 제거한다 ( 추가투입된 빨간색 리더 도 여기에 포함시킨다 )</li>
+                  <li>아직 제거해야 될 개수가 남아있다면, 국가가 합쳐지는 위치에 타일을 놓은 플레이어 가 승리한 국가에 놓여진 <span class="ui red label">빨간색 병사
+                      타일</span> 들을 해당 개수만큼 선택해 제거한다</li>
+                </ul>
+              </li>
+              <li>이후 빨간색 통합마커 를 제거한다</li>
+              <li>남아있는 추가투입된 모든 <span class="ui red label">빨간색 병사 타일</span> 을 게임에서 제거해 박스로 되돌린다; 빨간색 리더 는 플레이어 에게 돌려준다
+              </li>
+            </ol>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h3 class="ui header">게임 종료</h3>
+        <ul>
+          <li>( 타일주머니 가 비어서 ) 플레이어가 더 이상 타일을 보충할 수 없게 되면 게임 종료; 타일주머니에 타일이 하나도 없을때 종료되는게 아님</li>
+          <li>모든 플레이어는 자신의 스크린을 제거; 각 플레이어는 검은색, 빨간색, 파란색, 녹색 큐브 들 중 가장 적은 개수를 센다</li>
+          <li>여기서 노란색 큐브를 내가 원하는 색깔의 큐브로 취급할 수 있다 ( 와일드 카드 )</li>
+          <li>이 개수를 다른 플레이어 들과 비교한다; 가장 높은 플레이어가 승리한다 </li>
+          <li>동점이라면, 두번째로 적은 큐브의 개수를 세서 승자를 결정한다</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    $('.ui.accordion').accordion({ exclusive: false });
+  </script>
+</body>
+
+</html>
